@@ -1,0 +1,25 @@
+{
+  "name": "ssa",
+  "version": "0.0.0",
+  "description": "SSA Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sigs/ssa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sigs/ssa/issues"
+  },
+  "homepage": "https://github.com/sigs/ssa",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "mongoose": "^4.2.9",
+    "cheerio": "^0.19.0"
+  }
+}
