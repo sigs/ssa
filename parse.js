@@ -18,7 +18,6 @@ function parse(htmlString) {
 	$('.Apple-tab-span').remove()
 	
 	var definitionStyle, sourceStyle
-	var synonymCount = {}
 	var definition = '',
 		source = '',
 		title = '';
@@ -31,10 +30,8 @@ function parse(htmlString) {
 			if (!definitionStyle) { definitionStyle = style }
 			// write previous
 			if (!!definition) {
-				var index = synonymCount[title] || 0;
-				write(title, definition, source, index)				
+				write(title, definition, source)
 				definition = source = title = ''
-				synonymCount[title] = index + 1;
 			}
 						
 			title = $title.text();
@@ -56,10 +53,14 @@ function parse(htmlString) {
 	}	
 }
 
-function write(key, value, value2, index) {
+var synonymCount = {}
+function write(key, value, value2) {
+	var index = synonymCount[key] || 0;
+	synonymCount[key] = index + 1;
+
 	if (!index) {
 		console.log(key + ": " + value + " / " + value2)
 	} else {
-		console.log(key + "(" + index + "): " + value + " / " + value2)
+		console.log(key + "(" + (index+1) + "): " + value + " / " + value2)
 	}
 }
