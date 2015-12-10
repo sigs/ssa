@@ -56,6 +56,10 @@ function parse(htmlString) {
 	}	
 }
 
-function write(key, value, value2, index=0) {
-	console.log(key + ": " + value + " / " + value2)
+function write(key, value, value2, index) {
+	if (!index) {
+		console.log(key + ": " + value + " / " + value2)
+	} else {
+		console.log(key + "(" + index + "): " + value + " / " + value2)
+	}
 }
